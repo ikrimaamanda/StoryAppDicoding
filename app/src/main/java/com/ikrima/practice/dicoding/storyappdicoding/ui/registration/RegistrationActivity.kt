@@ -2,6 +2,8 @@ package com.ikrima.practice.dicoding.storyappdicoding.ui.registration
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.view.View
 import android.widget.ProgressBar
@@ -30,6 +32,16 @@ class RegistrationActivity : AppCompatActivity() {
             btnRegistration.setOnClickListener {
                 progressBarRegistration.visibility = View.VISIBLE
                 validateUserRegistration()
+            }
+
+            cbShowPassword.setOnCheckedChangeListener { _, p1 ->
+                if (!p1) {
+                    edRegisterPassword.transformationMethod =
+                        PasswordTransformationMethod.getInstance()
+                } else {
+                    edRegisterPassword.transformationMethod =
+                        HideReturnsTransformationMethod.getInstance()
+                }
             }
         }
     }

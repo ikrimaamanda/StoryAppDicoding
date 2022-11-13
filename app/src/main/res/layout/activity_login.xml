@@ -24,6 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"/>
 
+    <CheckBox
+        android:id="@+id/cb_show_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_password"
+        />
+
     <TextView
         android:id="@+id/tv_new_registration"
         android:text="@string/dont_have_a_new_account_yet"
